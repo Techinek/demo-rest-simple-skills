@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import Http404
 
 from rest_framework.response import Response
@@ -10,6 +9,7 @@ from .serializers import StudentSerializer
 
 
 class StudentList(APIView):
+    """Class for listing all students with get and post methods"""
     def get(self, request):
         students = Student.objects.all()
         serializer = StudentSerializer(students, many=True)
@@ -24,6 +24,7 @@ class StudentList(APIView):
 
 
 class StudentDetail(APIView):
+    """Class for rendering a single student"""
     def get_object(self,pk):
         try:
             return Student.objects.get(pk=pk)

@@ -1,15 +1,10 @@
-from django.shortcuts import render
-from django.http import Http404
-
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.views import APIView
 from rest_framework import generics, mixins
 
 from .models import Student
 from .serializers import StudentSerializer
 
 class StudentList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    """Class for listing all the students with get and post methods"""
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
@@ -20,6 +15,7 @@ class StudentList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gener
         return self.create(request)
 
 class StudentDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+    """Class for rendering a single student"""
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 

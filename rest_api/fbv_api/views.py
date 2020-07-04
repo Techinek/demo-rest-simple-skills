@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -9,6 +7,7 @@ from .serializers import StudentSerializer
 
 @api_view(['GET', 'POST'])
 def student_list(request):
+    """function for listing all the students with get and post methods"""
     if request.method == 'GET':
         students = Student.objects.all()
         serializer = StudentSerializer(students, many=True)
@@ -24,6 +23,7 @@ def student_list(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def student_detail(request, pk):
+    """function for rendering a single student"""
     try:
         student = Student.objects.get(pk=pk)
     except Student.DoesNotExist:
