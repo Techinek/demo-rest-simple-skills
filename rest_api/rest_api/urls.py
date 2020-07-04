@@ -25,4 +25,5 @@ urlpatterns = [
     path('mixins_students/', include('mixins_api.urls')),
     path('generics_students/', include('generics_api.urls')),
     path('viewsets_students/', include('viewssets_api.urls')),
+    path('nested_serializers/', include('nested_serializers.urls')),
 ]

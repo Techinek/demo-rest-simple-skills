@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'mixins_api',
     'generics_api',
     'viewssets_api',
+    'nested_serializers',
 
 ]
 
