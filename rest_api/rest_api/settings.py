@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'fbv_api',
     'cbv_api',
     'mixins_api',
+    'generics_api',
+    'viewssets_api',
 
 ]
 

@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fb_students/', include('fbv_api.urls')),
     path('cb_students/', include('cbv_api.urls')),
     path('mixins_students/', include('mixins_api.urls')),
+    path('generics_students/', include('generics_api.urls')),
+    path('viewsets_students/', include('viewssets_api.urls')),
 ]
