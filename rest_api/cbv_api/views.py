@@ -5,8 +5,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 
-from cbv_api.models import Student
-from cbv_api.serializers import StudentSerializer
+from .models import Student
+from .serializers import StudentSerializer
 
 
 class StudentList(APIView):

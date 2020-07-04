@@ -4,8 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
-from fbv_api.models import Student
-from fbv_api.serializers import StudentSerializer
+from .models import Student
+from .serializers import StudentSerializer
 
 @api_view(['GET', 'POST'])
 def student_list(request):
