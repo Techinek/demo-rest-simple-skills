@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'fbv_api'
+    'fbv_api',
+    'cbv_api',
+    'mixins_api',
+
 ]
 
 MIDDLEWARE = [
