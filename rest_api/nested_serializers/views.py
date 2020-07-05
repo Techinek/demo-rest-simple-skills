@@ -1,5 +1,8 @@
 from rest_framework import generics
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions
+
 
 from .serializers import AuthorSerializer, BookSerializer
 from .models import Author, Book
@@ -20,6 +23,8 @@ class AuthorListView(generics.ListCreateAPIView):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
     pagination_class = AuthorPagination
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated, DjangoModelPermissions]
 
 
 class AuthorDetailView(generics.RetrieveUpdateDestroyAPIView):
