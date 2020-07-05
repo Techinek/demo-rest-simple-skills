@@ -18,6 +18,7 @@ def find_flights(request):
     serializer=FlightSerializer(flights, many=True)
     return Response(serializer.data)
 
+
 @api_view(['POST'])
 def save_reservation(request):
     """function that creates reservation"""
@@ -28,6 +29,7 @@ def save_reservation(request):
     passenger.last_name = request.data['last_name']
     passenger.email = request.data['email']
     passenger.phone = request.data['phone']
+    passenger.save()
 
     reservation = Reservation()
     reservation.flight = flight
